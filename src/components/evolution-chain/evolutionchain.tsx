@@ -3,7 +3,7 @@ import type { PokemonSpecies } from "../../types/pokemon-species"
 import axios from "axios";
 import type { Evolutionschain } from "../../types/evolution-chain";
 import PokemonHelper from "../../helper/pokemon_helper";
-import { Box, Card, CardContent, CardMedia, Container, Grid, Paper, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Paper, Typography } from "@mui/material";
 import body_bg from "../../assets/body_bg.png";
 import body_gray_bg from "../../assets/body_gray_bg.png";
 interface EspeciesProp {

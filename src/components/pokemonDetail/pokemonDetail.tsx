@@ -1,8 +1,7 @@
-import { Box, Container, Grid, LinearProgress, List, ListItem, ListItemText, Modal, Typography } from "@mui/material";
+import { Box, Container, Grid, LinearProgress, Modal, Typography } from "@mui/material";
 import type { PokemonDetails } from "../../types/pokemon";
 import TypePokemon from "../typepokemon/typePokemon";
 import EvolutionsChain from "../evolution-chain/evolutionchain";
-import { Padding } from "@mui/icons-material";
 import body_bg from "../../assets/body_bg.png";
 import pokeball_white from '../../assets/pokebal_white.svg';
 

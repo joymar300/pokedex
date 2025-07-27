@@ -3,8 +3,6 @@ import type { PokemonDetails } from "../../types/pokemon";
 import axios from "axios";
 import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, Typography } from "@mui/material";
 import { PokemonDetail } from "../pokemonDetail/pokemonDetail";
-import { Await } from "react-router";
-import TypePokemon from "../typepokemon/typePokemon";
 interface CardDetailProps {
   url: string;
 }

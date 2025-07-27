@@ -1,6 +1,6 @@
 import { Box, Container, Grid, IconButton, Pagination, Paper, TextField } from "@mui/material";
 import axios from "axios";
-import { useEffect, useState, type HtmlHTMLAttributes } from "react";
+import { useEffect, useState } from "react";
 import type { Pokemons } from "../../types/pokemon";
 import { CardDetail } from "../../components/cardDetail/cardDetail";
 import SearchIcon from '@mui/icons-material/Search';

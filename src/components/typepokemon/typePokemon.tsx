@@ -7,9 +7,8 @@ interface typeProps {
 }
 export default function TypePokemon(typeProps: typeProps) {
         const [pokemonType, setPokemonType] = useState<Type| null>(null);
-        const [loading, setLoading] = useState(true);
-        const [open, setOpen] = useState(false);
-        
+
+
         useEffect(() => {
             getTypePokemon();  
         }, []);
@@ -23,8 +22,6 @@ export default function TypePokemon(typeProps: typeProps) {
                 }catch
                 (error) {
                     console.error("Error fetching type pokemon:", error);
-                }finally{
-                    setLoading(false);
                 }
 
         
