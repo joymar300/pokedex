@@ -14,9 +14,9 @@ export default function Home() {
     const [allPokemons, setAllpokemons] = useState<Pokemons[]>([]);
     const [listadePokemons, setListadePokemons] = useState<Pokemons[]>([]);
     const [filtro, setFiltro] = useState<string>("");
-    const [limit, setLimit] = useState<number>(20);
+    const [limit, _setLimit] = useState<number>(20);
     const [total, setTotal] = useState<number>(0);
-    const [offset, setOffset] = useState<number>(0);
+    const [offset, _setOffset] = useState<number>(0);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
