@@ -32,7 +32,7 @@ export function  CardDetail (cardDetailProps: CardDetailProps) {
         fetchPokemonDetails();
         
     }, [cardDetailProps.url]);
-        if (loading) return <CircularProgress></CircularProgress>;
+        if (loading) return  <CircularProgress></CircularProgress>;
         if (!pokemonDetails) return <p>No pokemon details disponibles</p>;
     return (
        
@@ -41,12 +41,13 @@ export function  CardDetail (cardDetailProps: CardDetailProps) {
             <CardMedia component={"img"} height={200}  sx={{ width: 251, objectFit:"contain" }} image={pokemonDetails?.sprites?.other?.["official-artwork"]?.front_default} alt={pokemonDetails?.name}>
             </CardMedia>
             <CardContent style={{ flex: '1 0 auto' }}>
-                <Typography variant="h5" component="div" style={{ textTransform: 'capitalize', marginBottom: '16px' }}>
+                <Typography variant="h6" component="div" style={{ textTransform: 'capitalize', marginBottom: '' }}>
                     {pokemonDetails?.name}
                 </Typography> 
                 <Grid container spacing={8} style={{  }}>
                 </Grid>
             </CardContent>
+            <CardActions>
                 <Button 
                 onClick={handleOpen} 
                 variant="outlined" 
@@ -55,7 +56,6 @@ export function  CardDetail (cardDetailProps: CardDetailProps) {
             >
                 Ver Detalles
             </Button>     
-            <CardActions>
             </CardActions>
             <PokemonDetail
             pokedetail={pokemonDetails}
