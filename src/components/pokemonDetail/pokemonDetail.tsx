@@ -1,4 +1,4 @@
-import { Box, Container, Grid, List, ListItem, ListItemText, Modal, Typography } from "@mui/material";
+import { Box, Container, Grid, LinearProgress, List, ListItem, ListItemText, Modal, Typography } from "@mui/material";
 import type { PokemonDetails } from "../../types/pokemon";
 import TypePokemon from "../typepokemon/typePokemon";
 import EvolutionsChain from "../../helper/evolution-chain/evolutionchain";
@@ -40,7 +40,7 @@ export function PokemonDetail({ pokedetail, open, handleClose }: PokemonDetailPr
       <Container maxWidth="lg" style={{ padding: '20px', backgroundColor:'#414141ff' }}>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '20px', backgroundImage: `url(${body_bg})`, padding: 2, borderRadius: 2, color: '#fff' }}>
         <Grid container spacing={9} sx={{ }}>
-          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4}}>
             <Box sx={{ display: 'flex' , justifyContent: 'center', border: '1px solid #ccc', borderRadius: 2, padding: 2, backgroundColor: '#f0f0f0ff' }}>
               <img
                 src={pokedetail.sprites?.other?.["official-artwork"]?.front_default}
@@ -51,7 +51,7 @@ export function PokemonDetail({ pokedetail, open, handleClose }: PokemonDetailPr
             </Box>
 
           </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Box>
 
               <Typography variant="body1" paragraph>
@@ -75,9 +75,20 @@ export function PokemonDetail({ pokedetail, open, handleClose }: PokemonDetailPr
             </Box>
 
           </Grid>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} >
+            <Box >
+              {pokedetail.stats?.map((stats, index)=>(
+                <>
+
+                  <Typography color="#ffff"> {stats.stat.name}: <Typography variant="caption"> {stats.base_stat}</Typography>  </Typography> <LinearProgress variant="determinate" color="error" value={stats.base_stat} />
+                </>
+
+              ))}
+            </Box>
+
+          </Grid>
         </Grid>
         </Box>
-
         <EvolutionsChain url={pokedetail.species?.url} />
       </Container>
       </Box>

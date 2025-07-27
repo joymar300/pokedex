@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { PokemonDetails } from "../../types/pokemon";
 import axios from "axios";
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, Typography } from "@mui/material";
 import { PokemonDetail } from "../pokemonDetail/pokemonDetail";
 import { Await } from "react-router";
 import TypePokemon from "../typepokemon/typePokemon";
@@ -32,7 +32,7 @@ export function  CardDetail (cardDetailProps: CardDetailProps) {
         fetchPokemonDetails();
         
     }, [cardDetailProps.url]);
-        if (loading) return <p>Loading...</p>;
+        if (loading) return <CircularProgress></CircularProgress>;
         if (!pokemonDetails) return <p>No pokemon details disponibles</p>;
     return (
        
