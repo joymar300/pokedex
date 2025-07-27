@@ -1,7 +1,7 @@
 import { Box, Container, Grid, LinearProgress, List, ListItem, ListItemText, Modal, Typography } from "@mui/material";
 import type { PokemonDetails } from "../../types/pokemon";
 import TypePokemon from "../typepokemon/typePokemon";
-import EvolutionsChain from "../../helper/evolution-chain/evolutionchain";
+import EvolutionsChain from "../evolution-chain/evolutionchain";
 import { Padding } from "@mui/icons-material";
 import body_bg from "../../assets/body_bg.png";
 import pokeball_white from '../../assets/pokebal_white.svg';
@@ -23,6 +23,7 @@ const modalStyle = {
   overflowY: 'auto',
   maxHeight: '80vh',
   
+   width: { xs: '100%', sm: '90%', md: '80%', lg: '70%', xl: '60%' }
 
 
 };
@@ -78,10 +79,10 @@ export function PokemonDetail({ pokedetail, open, handleClose }: PokemonDetailPr
           <Grid size={{ xs: 12, sm: 6, md: 4 }} >
             <Box >
               {pokedetail.stats?.map((stats, index)=>(
-                <>
+                <div key={index}>
 
-                  <Typography color="#ffff"> {stats.stat.name}: <Typography variant="caption"> {stats.base_stat}</Typography>  </Typography> <LinearProgress variant="determinate" color="error" value={stats.base_stat} />
-                </>
+                  <Typography  color="#ffff"> {stats.stat.name}: <Typography variant="caption"> {stats.base_stat}</Typography>  </Typography> <LinearProgress  variant="determinate" color="error" value={stats.base_stat} />
+                </div>
 
               ))}
             </Box>
